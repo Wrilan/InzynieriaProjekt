@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+
+<GridPane fx:controller="app.controllers.PanelController" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="15" vgap="15"
+          prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;">
+
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button text="Wyloguj" onAction="#logout" />
+    </HBox>
+
+    <padding><Insets top="50" right="50" bottom="80" left="50"/></padding>
+</GridPane>
