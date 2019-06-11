@@ -9,6 +9,10 @@ module Inzynieria
     requires javafx.controls;
     requires javafx.fxml;
 
+    requires itext;
+    requires core.renderer.R8;
+    requires jdk.xml.dom;
+
     exports app;
     exports app.controllers;
     exports app.dao;

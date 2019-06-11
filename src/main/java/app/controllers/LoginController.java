@@ -19,16 +19,14 @@ public class LoginController {
 
     @FXML
     public void initialize() {
-        fieldId.setOnKeyPressed(ke -> {
-            if (ke.getCode().equals(KeyCode.ENTER))
-            {
+        fieldId.setOnKeyPressed(key -> {
+            if (key.getCode().equals(KeyCode.ENTER)) {
                 login();
             }
         });
 
-        fieldPassword.setOnKeyPressed(ke -> {
-            if (ke.getCode().equals(KeyCode.ENTER))
-            {
+        fieldPassword.setOnKeyPressed(key -> {
+            if (key.getCode().equals(KeyCode.ENTER)) {
                 login();
             }
         });
