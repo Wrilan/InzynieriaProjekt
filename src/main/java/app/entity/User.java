@@ -4,28 +4,34 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    public int id;
-
+    private int id;
     private String firstName;
-
     private String lastName;
-
     private String phone;
-
     private String email;
-
     private String password;
-
     private int role;
 
-    public User() {
-        this.firstName = "TEST";
+    public User(int id, String firstName, String lastName, String phone, String email, String password, int role) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getId() {
+        return this.id;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getFirstName() {
         return this.firstName;
     }
@@ -33,15 +39,9 @@ public class User implements Serializable {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    public String getLastName() { return this.lastName; }
 
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
+    public void setPhone(String phone) { this.phone = phone; }
     public String getPhone() {
         return this.phone;
     }
@@ -49,7 +49,6 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
     public String getEmail() {
         return this.email;
     }
@@ -57,7 +56,6 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
     public String getPassword() {
         return this.password;
     }
@@ -65,7 +63,6 @@ public class User implements Serializable {
     public void setRole(int role) {
         this.role = role;
     }
-
     public int getRole() {
         return this.role;
     }

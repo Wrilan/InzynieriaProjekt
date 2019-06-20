@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+
+<GridPane fx:controller="app.controllers.AdminPanelController" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="15" vgap="15"
+          prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;">
+
+    <stylesheets>
+        <URL value="@../css/global.css"/>
+        <URL value="@../css/panel.css"/>
+    </stylesheets>
+
+    <VBox spacing="10" alignment="top_right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Label fx:id="loggedIn" text=""/>
+        <Button text="Wyloguj" onAction="#logout"/>
+    </VBox>
+
+    <padding><Insets top="10" right="25" bottom="10" left="25"/></padding>
+</GridPane>

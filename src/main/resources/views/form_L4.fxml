@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+
+<GridPane fx:controller="app.controllers.FormL4Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="15" vgap="15"
+          prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;">
+
+    <stylesheets>
+        <URL value="@../css/global.css"/>
+        <URL value="@../css/login.css"/>
+    </stylesheets>
+
+    <HBox spacing="10" alignment="top_left" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+        <Button text="Wyślij" onAction="#send"/>
+    </HBox>
+
+    <padding><Insets top="50" right="50" bottom="80" left="50"/></padding>
+</GridPane>

@@ -17,11 +17,13 @@ public class Pdf {
 
         File file = fileChooser.showSaveDialog(null);
 
-        String filePdf = "example.pdf";
+        String filePdf;
 
         if(file != null) {
             filePdf = file.toString();
             System.out.println(filePdf);
+        } else {
+            return;
         }
 
         OutputStream outputStream = new FileOutputStream(filePdf);

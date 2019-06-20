@@ -5,21 +5,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.fxml.FXML;
 
-import java.sql.ResultSet;
-
 import app.App;
-import app.utilities.Database;
+import app.dao.UserDao;
 import app.utilities.Hash;
 
 public class LoginController {
 
     @FXML
-    public TextField fieldId;
+    public TextField fieldTechId;
     public TextField fieldPassword;
 
     @FXML
     public void initialize() {
-        fieldId.setOnKeyPressed(key -> {
+        fieldTechId.setOnKeyPressed(key -> {
             if (key.getCode().equals(KeyCode.ENTER)) {
                 login();
             }
@@ -35,16 +33,20 @@ public class LoginController {
     @FXML
     public void login() {
         try {
-            ResultSet result = Database.query("SELECT * FROM users WHERE id=" + Integer.parseInt(fieldId.getText()));
+            App.user = new UserDao().getUser(Integer.parseInt(fieldTechId.getText()));
 
-            while (result.next()) {
-                if (result.getString("password").equals(Hash.sha256(fieldPassword.getText()))) {
-                    App.setRoot("panel");
-                    return;
+            if (App.user.getPassword().equals(Hash.sha256(fieldPassword.getText()))) {
+                if(App.user.getRole() == 0) {
+                    App.setRoot("admin_panel");
+                } else {
+                    App.setRoot("doctor_panel");
                 }
+
+                return;
             }
         } catch (Exception e) {
             showError();
+            System.out.println("Error: " + e);
             return;
         }
 

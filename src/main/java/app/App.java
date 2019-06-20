@@ -1,14 +1,20 @@
 package app;
 
+import java.io.IOException;
+
+import app.entity.Patient;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import app.entity.User;
 
 public class App extends Application {
+
+    public static User user;
+    public static Patient patient;
 
     private static Scene scene;
 
@@ -26,6 +32,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("login"));
         stage.setScene(scene);
         stage.setTitle("LZA System");
+        stage.setResizable(false);
         stage.show();
     }
 
