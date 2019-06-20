@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -20,30 +22,42 @@ import app.utilities.Pdf;
 public class DoctorPanelController {
 
     @FXML
+    public ListView listView;
+    public TextField fieldSearch;
     public Label loggedIn;
-    public ListView listOfPatients;
-    public ObservableList data = FXCollections.observableArrayList();
 
-    private ArrayList<Patient> patients;
+    private ListOfPatients listOfPatients;
 
     @FXML
     public void initialize() throws SQLException {
-        patients = new PatientDao().getPatients();
+        listOfPatients = new ListOfPatients();
 
-        for (Patient patient : patients) {
-            data.add(patient.getFullName());
-        }
+        loggedIn.setText("Lekarz: " + App.user.getFirstName() + " " + App.user.getLastName());
 
-        listOfPatients.setItems(data);
-
-        loggedIn.setText("Zalogowany: " + App.user.getFirstName() + " " + App.user.getLastName());
+        fieldSearch.setOnKeyPressed(key -> {
+            if (key.getCode().equals(KeyCode.ENTER)) {
+                search();
+            }
+        });
     }
 
     @FXML
-    public void createForm() throws IOException {
+    public void search() {
+        if(!listOfPatients.search(fieldSearch.getText())) {
+            App.showError("Nie znaleziono pacienta o poadnym nr PESEL lub NIP");
+        }
+    }
+
+    @FXML
+    public void createFormL4() throws IOException {
         //System.out.println(listOfPatients.getSelectionModel().getSelectedIndex());
         //listOfPatients.scrollTo(5);
-        App.setRoot("form");
+        App.setRoot("form_L4");
+    }
+
+    @FXML
+    public void createFormL10() throws IOException {
+        App.setRoot("form_L10");
     }
 
     @FXML
@@ -54,5 +68,50 @@ public class DoctorPanelController {
     @FXML
     public void logout() throws IOException {
         App.setRoot("login");
+    }
+
+    public class ListOfPatients {
+
+        public ObservableList data = FXCollections.observableArrayList();
+
+        private ArrayList<Patient> patients;
+
+        public ListOfPatients() throws SQLException {
+            this.update();
+        }
+
+        public void update() throws SQLException {
+            patients = new PatientDao().getPatients();
+            for (Patient patient : patients) {
+                String item = patient.getFullName();
+                for(int a = 0; a < (30 - patient.getFullName().length()); a++) {
+                    item += ' ';
+                }
+                item += patient.getPesel() + "            " + patient.getNip() + "            " + patient.getPhone();
+                data.add(item);
+            }
+            listView.setItems(data);
+            selectItemFromList(0);
+        }
+
+        public boolean search(String nr) {
+            int index = 0;
+
+            for (Patient patient : patients) {
+                if(patient.getPesel().equals(nr) || patient.getNip().equals(nr)) {
+                    this.selectItemFromList(index);
+                    return true;
+                }
+                index++;
+            }
+
+            return false;
+        }
+
+        private void selectItemFromList(int id) {
+            listView.getSelectionModel().select(id);
+            listView.scrollTo(id);
+            App.patient = patients.get(id);
+        }
     }
 }

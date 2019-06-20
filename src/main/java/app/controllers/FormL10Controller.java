@@ -1,8 +1,8 @@
 package app.controllers;
 
-import javafx.fxml.FXML;
-
 import java.io.IOException;
+
+import javafx.fxml.FXML;
 
 import app.App;
 

@@ -7,6 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <?import java.net.URL?>
 
 <GridPane fx:controller="app.controllers.DoctorPanelController" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="15" vgap="15"
@@ -17,20 +20,31 @@
         <URL value="@../css/panel.css"/>
     </stylesheets>
 
-    <VBox spacing="10" alignment="top_left" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" prefWidth="550">
+    <VBox spacing="10" alignment="top_left" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" prefWidth="700">
         <Label text="Lista pacjentów:"/>
-        <ListView fx:id="listOfPatients"/>
+        <ImageView fitHeight="30.0" fitWidth="700.0" preserveRatio="true">
+            <image>
+                <Image url="@../images/header.jpg"/>
+            </image>
+        </ImageView>
+        <ListView style='-fx-font-family: "Courier New";' fx:id="listView"/>
     </VBox>
 
-    <HBox spacing="10" alignment="top_left" GridPane.columnIndex="0" GridPane.rowIndex="1">
-        <Button text="Nowe zwolnienie" onAction="#createForm"/>
+    <HBox spacing="10" alignment="center" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Label text="Wyszukaj:"/>
+        <TextField fx:id="fieldSearch" promptText="Wprowadź PESEL lub NIP"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="center_left" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Button text="Nowe L4" onAction="#createFormL4"/>
+        <Button text="Nowe L10" onAction="#createFormL10"/>
         <Button text="PDF" onAction="#generate"/>
     </HBox>
 
-    <VBox spacing="10" alignment="top_right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <VBox spacing="10" alignment="center_right" GridPane.columnIndex="1" GridPane.rowIndex="2">
         <Label fx:id="loggedIn" text=""/>
         <Button text="Wyloguj" onAction="#logout"/>
     </VBox>
 
-    <padding><Insets top="10" right="25" bottom="10" left="25"/></padding>
+    <padding><Insets top="10" right="25" bottom="25" left="25"/></padding>
 </GridPane>

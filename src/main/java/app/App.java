@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import app.entity.User;
@@ -18,6 +19,13 @@ public class App extends Application {
 
     private static Scene scene;
 
+    public static void showError(String text) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Wystąpił błąd");
+        alert.setHeaderText(text);
+        alert.showAndWait();
+    }
+    
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource( "/views/" + fxml + ".fxml"));
         return fxmlLoader.load();
@@ -39,5 +47,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }
