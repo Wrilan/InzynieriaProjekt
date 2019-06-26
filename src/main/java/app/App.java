@@ -1,6 +1,9 @@
 package app;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 import app.entity.Patient;
 import javafx.application.Application;
@@ -19,9 +22,9 @@ public class App extends Application {
 
     private static Scene scene;
 
-    public static void showError(String text) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Wystąpił błąd");
+    public static void showAlert(String text, Alert.AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle("");
         alert.setHeaderText(text);
         alert.showAndWait();
     }
@@ -37,6 +40,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+        System.out.println( sdf.format(cal.getTime()));
+        System.out.println(System.currentTimeMillis());
+
         scene = new Scene(loadFXML("login"));
         stage.setScene(scene);
         stage.setTitle("LZA System");

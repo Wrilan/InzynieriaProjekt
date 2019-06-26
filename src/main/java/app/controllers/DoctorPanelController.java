@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -44,20 +45,15 @@ public class DoctorPanelController {
     @FXML
     public void search() {
         if(!listOfPatients.search(fieldSearch.getText())) {
-            App.showError("Nie znaleziono pacienta o poadnym nr PESEL lub NIP");
+            App.showAlert("Nie znaleziono pacienta o poadnym nr PESEL lub NIP", Alert.AlertType.ERROR);
         }
     }
 
     @FXML
-    public void createFormL4() throws IOException {
-        //System.out.println(listOfPatients.getSelectionModel().getSelectedIndex());
-        //listOfPatients.scrollTo(5);
-        App.setRoot("form_L4");
-    }
-
-    @FXML
-    public void createFormL10() throws IOException {
-        App.setRoot("form_L10");
+    public void createFormCertificate() throws IOException {
+        listOfPatients.selectItemFromList(listView.getSelectionModel().getSelectedIndex());
+        System.out.println(App.patient.getId());
+        App.setRoot("form_certificate");
     }
 
     @FXML
@@ -69,6 +65,7 @@ public class DoctorPanelController {
     public void logout() throws IOException {
         App.setRoot("login");
     }
+
 
     public class ListOfPatients {
 

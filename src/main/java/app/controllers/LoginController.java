@@ -1,5 +1,6 @@
 package app.controllers;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.fxml.FXML;
@@ -16,6 +17,9 @@ public class LoginController {
 
     @FXML
     public void initialize() {
+        fieldTechId.setText("10000");
+        fieldPassword.setText("test");
+
         fieldTechId.setOnKeyPressed(key -> {
             if (key.getCode().equals(KeyCode.ENTER)) {
                 login();
@@ -44,11 +48,11 @@ public class LoginController {
                 return;
             }
         } catch (Exception e) {
-            App.showError("Podany identyfikator lub hasło jest nieprawidłowe");
+            App.showAlert("Podany identyfikator lub hasło jest nieprawidłowe", Alert.AlertType.ERROR);
             System.out.println("Error: " + e);
             return;
         }
 
-        App.showError("Podany identyfikator lub hasło jest nieprawidłowe");
+        App.showAlert("Podany identyfikator lub hasło jest nieprawidłowe", Alert.AlertType.ERROR);
     }
 }

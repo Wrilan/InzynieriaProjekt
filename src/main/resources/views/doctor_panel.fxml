@@ -36,8 +36,7 @@
     </HBox>
 
     <HBox spacing="10" alignment="center_left" GridPane.columnIndex="0" GridPane.rowIndex="2">
-        <Button text="Nowe L4" onAction="#createFormL4"/>
-        <Button text="Nowe L10" onAction="#createFormL10"/>
+        <Button text="Nowe zwolnienie" onAction="#createFormCertificate"/>
         <Button text="PDF" onAction="#generate"/>
     </HBox>
 

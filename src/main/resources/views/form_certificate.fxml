@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import java.net.URL?>
+
+<GridPane fx:controller="app.controllers.FormCertificateController" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="15" vgap="15"
+          prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;">
+
+    <stylesheets>
+        <URL value="@../css/global.css"/>
+        <URL value="@../css/form_certificate.css"/>
+    </stylesheets>
+
+    <Label text="Imię i nazwisko:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="fieldFullName" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Data urodzenia:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="fieldDateBirth" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Pesel:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField fx:id="fieldPesel" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="Nip pracodawcy:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField fx:id="fieldNip" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Data wystawienia:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="fieldDateRelease" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Zwolnienie od:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <DatePicker fx:id="fieldDateFrom" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Label text="Zwolnienie do:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <DatePicker fx:id="fieldDateTo" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+    <Label text="Kod choroby:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+    <TextField fx:id="fieldCode" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+    <Label text="Typ zwolnienia:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+    <ComboBox fx:id="fieldType" promptText="Wybierz" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+    <HBox spacing="10" alignment="center" GridPane.columnIndex="0" GridPane.rowIndex="15" GridPane.columnSpan="2">
+        <Button text="Powrót" onAction="#back"/>
+        <Button text="Wyślij" onAction="#send"/>
+    </HBox>
+
+    <padding><Insets top="50" right="50" bottom="80" left="50"/></padding>
+</GridPane>
