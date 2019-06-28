@@ -1,0 +1,64 @@
+\hypertarget{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients}{}\section{app.\+controllers.\+Doctor\+Panel\+Controller.\+List\+Of\+Patients Class Reference}
+\label{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients}\index{app.controllers.DoctorPanelController.ListOfPatients@{app.controllers.DoctorPanelController.ListOfPatients}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_ae1f6e7104c1bbcbf91b706dffe07f504}{List\+Of\+Patients}} ()  throws S\+Q\+L\+Exception 
+\item 
+void \mbox{\hyperlink{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_a60e94cce0b803fde7146aa6e16c71958}{update}} ()  throws S\+Q\+L\+Exception 
+\item 
+boolean \mbox{\hyperlink{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_aaf2f528dced80e98416b78dd695655fb}{search}} (String nr)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_abca31a9efc6a27e5f77f7a25e2e547ea}\label{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_abca31a9efc6a27e5f77f7a25e2e547ea}} 
+Observable\+List {\bfseries data} = F\+X\+Collections.\+observable\+Array\+List()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_ae1f6e7104c1bbcbf91b706dffe07f504}\label{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_ae1f6e7104c1bbcbf91b706dffe07f504}} 
+\index{app.controllers.DoctorPanelController.ListOfPatients@{app.controllers.DoctorPanelController.ListOfPatients}!ListOfPatients@{ListOfPatients}}
+\index{ListOfPatients@{ListOfPatients}!app.controllers.DoctorPanelController.ListOfPatients@{app.controllers.DoctorPanelController.ListOfPatients}}
+\subsubsection{\texorpdfstring{ListOfPatients()}{ListOfPatients()}}
+{\footnotesize\ttfamily app.\+controllers.\+Doctor\+Panel\+Controller.\+List\+Of\+Patients.\+List\+Of\+Patients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws S\+Q\+L\+Exception}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em S\+Q\+L\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+Konstruktor klasy \mbox{\hyperlink{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients}{List\+Of\+Patients}}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_aaf2f528dced80e98416b78dd695655fb}\label{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_aaf2f528dced80e98416b78dd695655fb}} 
+\index{app.controllers.DoctorPanelController.ListOfPatients@{app.controllers.DoctorPanelController.ListOfPatients}!search@{search}}
+\index{search@{search}!app.controllers.DoctorPanelController.ListOfPatients@{app.controllers.DoctorPanelController.ListOfPatients}}
+\subsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily boolean app.\+controllers.\+Doctor\+Panel\+Controller.\+List\+Of\+Patients.\+search (\begin{DoxyParamCaption}\item[{String}]{nr }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr} & Numer pesel lub nip do wyszukania. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Metoga zwraca wartość true jeśli pacjent o podanym numerze zostanie znaleziony lub false gdy takowy nie istnieje w bazie danych. @ Metoda \mbox{\hyperlink{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_aaf2f528dced80e98416b78dd695655fb}{search()}} zajmuje się wyszukiwaniem pacjenta po jego numerach nip lub pesel by następnie zwrócić zmienną typu boolean w zależności, czy pacjent został znaleziony lub nie. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_a60e94cce0b803fde7146aa6e16c71958}\label{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_a60e94cce0b803fde7146aa6e16c71958}} 
+\index{app.controllers.DoctorPanelController.ListOfPatients@{app.controllers.DoctorPanelController.ListOfPatients}!update@{update}}
+\index{update@{update}!app.controllers.DoctorPanelController.ListOfPatients@{app.controllers.DoctorPanelController.ListOfPatients}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void app.\+controllers.\+Doctor\+Panel\+Controller.\+List\+Of\+Patients.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws S\+Q\+L\+Exception}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em S\+Q\+L\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+Metoda \mbox{\hyperlink{classapp_1_1controllers_1_1_doctor_panel_controller_1_1_list_of_patients_a60e94cce0b803fde7146aa6e16c71958}{update()}} zajmuje się oddzielaniem danych pacjentów, wrzucaniem ich do listy by na końcu ustawić, by pierwszy pacjent był zaznaczony domyślnie. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/app/controllers/\mbox{\hyperlink{_doctor_panel_controller_8java}{Doctor\+Panel\+Controller.\+java}}\end{DoxyCompactItemize}

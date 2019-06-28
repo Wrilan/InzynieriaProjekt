@@ -1,0 +1,53 @@
+\hypertarget{classapp_1_1dao_1_1_certificate_dao}{}\section{app.\+dao.\+Certificate\+Dao Class Reference}
+\label{classapp_1_1dao_1_1_certificate_dao}\index{app.dao.CertificateDao@{app.dao.CertificateDao}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{classapp_1_1entity_1_1_certificate}{Certificate}} $>$ \mbox{\hyperlink{classapp_1_1dao_1_1_certificate_dao_a62635ecd7b619b079f7a42bea0957257}{get\+Certificates}} (Integer user\+Id)  throws S\+Q\+L\+Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \mbox{\hyperlink{classapp_1_1dao_1_1_certificate_dao_ade18e806b7233ecf641badf6d7fc2c52}{set\+Certificate}} (\mbox{\hyperlink{classapp_1_1entity_1_1_certificate}{Certificate}} certificate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classapp_1_1dao_1_1_certificate_dao_a62635ecd7b619b079f7a42bea0957257}\label{classapp_1_1dao_1_1_certificate_dao_a62635ecd7b619b079f7a42bea0957257}} 
+\index{app.dao.CertificateDao@{app.dao.CertificateDao}!getCertificates@{getCertificates}}
+\index{getCertificates@{getCertificates}!app.dao.CertificateDao@{app.dao.CertificateDao}}
+\subsubsection{\texorpdfstring{getCertificates()}{getCertificates()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classapp_1_1entity_1_1_certificate}{Certificate}}$>$ app.\+dao.\+Certificate\+Dao.\+get\+Certificates (\begin{DoxyParamCaption}\item[{Integer}]{user\+Id }\end{DoxyParamCaption}) throws S\+Q\+L\+Exception}
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & Id użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Metoda zwraca listę typu Array\+List zawierającą zwolnienia pacjęta o podanym id. W przypadku gdy id pacjęta ma wartość null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em S\+Q\+L\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+Metoda \mbox{\hyperlink{classapp_1_1dao_1_1_certificate_dao_a62635ecd7b619b079f7a42bea0957257}{get\+Certificates()}} szuka pacjenta o wprowadzonym id lub wszystkich pacjentów w przypadku wartości null, a następnie zwraca listę ich zwolnień. \mbox{\Hypertarget{classapp_1_1dao_1_1_certificate_dao_ade18e806b7233ecf641badf6d7fc2c52}\label{classapp_1_1dao_1_1_certificate_dao_ade18e806b7233ecf641badf6d7fc2c52}} 
+\index{app.dao.CertificateDao@{app.dao.CertificateDao}!setCertificate@{setCertificate}}
+\index{setCertificate@{setCertificate}!app.dao.CertificateDao@{app.dao.CertificateDao}}
+\subsubsection{\texorpdfstring{setCertificate()}{setCertificate()}}
+{\footnotesize\ttfamily static boolean app.\+dao.\+Certificate\+Dao.\+set\+Certificate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classapp_1_1entity_1_1_certificate}{Certificate}}}]{certificate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em certificate} & Zwolnienie pacjenta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Metoda zwraca true gdy dodanie zwolnienia do bazy powiedzie się, a false gdy informacje o zwolnieniu znajdują się już w bazie.
+\end{DoxyReturn}
+Metoda \mbox{\hyperlink{classapp_1_1dao_1_1_certificate_dao_ade18e806b7233ecf641badf6d7fc2c52}{set\+Certificate()}} wprowadza do bazy informacje o podanym zwolnieniu lekarskim, a nasetępnie zwraca wartość typu boolean w zależności od wyniku przeprowadzonej operacji. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/app/dao/\mbox{\hyperlink{_certificate_dao_8java}{Certificate\+Dao.\+java}}\end{DoxyCompactItemize}
