@@ -1,0 +1,50 @@
+\hypertarget{classapp_1_1dao_1_1_patient_dao}{}\section{app.\+dao.\+Patient\+Dao Class Reference}
+\label{classapp_1_1dao_1_1_patient_dao}\index{app.dao.PatientDao@{app.dao.PatientDao}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classapp_1_1entity_1_1_patient}{Patient}} \mbox{\hyperlink{classapp_1_1dao_1_1_patient_dao_a40b301232820084e66abe4e3de61784e}{get\+Patient}} (int id)  throws S\+Q\+L\+Exception 
+\item 
+Array\+List$<$ \mbox{\hyperlink{classapp_1_1entity_1_1_patient}{Patient}} $>$ \mbox{\hyperlink{classapp_1_1dao_1_1_patient_dao_ad5669e99f35b72e402e3ef014b3ae112}{get\+Patients}} ()  throws S\+Q\+L\+Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classapp_1_1dao_1_1_patient_dao_a40b301232820084e66abe4e3de61784e}\label{classapp_1_1dao_1_1_patient_dao_a40b301232820084e66abe4e3de61784e}} 
+\index{app.dao.PatientDao@{app.dao.PatientDao}!getPatient@{getPatient}}
+\index{getPatient@{getPatient}!app.dao.PatientDao@{app.dao.PatientDao}}
+\subsubsection{\texorpdfstring{getPatient()}{getPatient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classapp_1_1entity_1_1_patient}{Patient}} app.\+dao.\+Patient\+Dao.\+get\+Patient (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) throws S\+Q\+L\+Exception}
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id pacjenta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Metoda zwraca instancję klasy Patient z danymi znalezionego pacjenta lub null w przypadku gdy pacjent o podanym id nie znajduje się w bazie danych. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em S\+Q\+L\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+Metoda \mbox{\hyperlink{classapp_1_1dao_1_1_patient_dao_a40b301232820084e66abe4e3de61784e}{get\+Patient()}} sprawdza, czy w bazie danych znajduje się pacjent o podanym id. Jeśli pacjent zostanie znaleziony to zwraca go w postaci instancji klasy Patient a jeśli nie, to metoda zwraca wartość null. \mbox{\Hypertarget{classapp_1_1dao_1_1_patient_dao_ad5669e99f35b72e402e3ef014b3ae112}\label{classapp_1_1dao_1_1_patient_dao_ad5669e99f35b72e402e3ef014b3ae112}} 
+\index{app.dao.PatientDao@{app.dao.PatientDao}!getPatients@{getPatients}}
+\index{getPatients@{getPatients}!app.dao.PatientDao@{app.dao.PatientDao}}
+\subsubsection{\texorpdfstring{getPatients()}{getPatients()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classapp_1_1entity_1_1_patient}{Patient}}$>$ app.\+dao.\+Patient\+Dao.\+get\+Patients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws S\+Q\+L\+Exception}
+
+\begin{DoxyReturn}{Returns}
+Metoda zwraca listę (Array\+List) wszystkich pacjentów znajdujących się w bazie danych. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em S\+Q\+L\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+Metoda \mbox{\hyperlink{classapp_1_1dao_1_1_patient_dao_ad5669e99f35b72e402e3ef014b3ae112}{get\+Patients()}} przeszukuje bazę danych a następnie zwraca wszystkich znajdujących się w niej pacjentów. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/app/dao/\mbox{\hyperlink{_patient_dao_8java}{Patient\+Dao.\+java}}\end{DoxyCompactItemize}

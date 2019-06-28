@@ -8,7 +8,19 @@ import java.util.Objects;
 import app.entity.Certificate;
 import app.utilities.Database;
 
+/**
+ * @file CertificateDao.java
+ * @brief Klasa do wprowadzania  i pobierania zwolnienień do bazy danych.
+ * @details CertificateDao.java służy do komunikacji z bazą danych, wprowadzania do niej informacji dotyczących zwolnień lekarskich obsługiwanego pacjenta i ich pobierania.
+ */
 public class CertificateDao {
+
+    /**
+     * @param certificate Zwolnienie pacjenta
+     * @return Metoda zwraca true gdy dodanie zwolnienia do bazy powiedzie się, a false gdy informacje o zwolnieniu znajdują się już w bazie.
+     * @details Metoda setCertificate() wprowadza do bazy informacje o podanym zwolnieniu lekarskim,
+     * a nasetępnie zwraca wartość typu boolean w zależności od wyniku przeprowadzonej operacji.
+     */
     public static boolean setCertificate(Certificate certificate) {
         boolean result = true;
 
@@ -22,6 +34,12 @@ public class CertificateDao {
         return result;
     }
 
+    /**
+     * @param userId Id użytkownika
+     * @return Metoda zwraca listę typu ArrayList zawierającą zwolnienia pacjęta o podanym id. W przypadku gdy id pacjęta ma wartość null.
+     * @throws SQLException
+     * @details Metoda getCertificates() szuka pacjenta o wprowadzonym id lub wszystkich pacjentów w przypadku wartości null, a następnie zwraca listę ich zwolnień.
+     */
     public ArrayList<Certificate> getCertificates(Integer userId) throws SQLException {
         ArrayList<Certificate> certificates = new ArrayList<>();
 
