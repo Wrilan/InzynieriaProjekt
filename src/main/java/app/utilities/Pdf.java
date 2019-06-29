@@ -8,8 +8,18 @@ import java.io.OutputStream;
 import javafx.stage.FileChooser;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import com.lowagie.text.DocumentException;
-
+/**
+ * @file Pdf.java
+ * @brief Klasa zajmująca się generowaniem pliku pdf.
+ * @details Pdf.java jest to klasa odpowiadająca za generowanie pliku pdf za pomocą dostarczonego kodu html.
+ */
 public class Pdf {
+    /**
+     * @param html Kod języka html umieszczony w zmiennej typu String.
+     * @throws IOException
+     * @throws DocumentException
+     * @details Metoda generate(), tworzy plik pdf na podstawie dostarczonego kodu html poprzez zmienną typu String.
+     */
     public static void generate(String html) throws IOException, DocumentException {
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");

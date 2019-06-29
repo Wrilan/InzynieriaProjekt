@@ -9,12 +9,20 @@ import app.App;
 import app.dao.UserDao;
 import app.utilities.Hash;
 
+/**
+ * @file LoginController.java
+ * @brief Klasa zajmująca się obsługą panelu logowania.
+ * @details Klasa LoginController.java zajmuje się obsługą panelu logowania, w tym jego inicjalizacją i przeprowadzaniem logowania.
+ */
 public class LoginController {
 
     @FXML
     public TextField fieldTechId;
     public TextField fieldPassword;
 
+    /**
+     * @details Metoda initialize() wywoływana jest do inicjalizacji kontrolera po całkowitym przetworzeniu elementu głównego dla wybranego pacjenta.
+     */
     @FXML
     public void initialize() {
         fieldTechId.setText("10000");
@@ -33,6 +41,9 @@ public class LoginController {
         });
     }
 
+    /**
+     * @details Metoda login() obsługuje logowanie się do aplikacji.
+     */
     @FXML
     public void login() {
         try {

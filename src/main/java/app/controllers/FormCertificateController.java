@@ -1,5 +1,10 @@
 package app.controllers;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -8,15 +13,16 @@ import javafx.collections.FXCollections;
 import javafx.util.StringConverter;
 import javafx.fxml.FXML;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 import app.App;
 import app.dao.CertificateDao;
 import app.entity.Certificate;
 
+/**
+ * @file FormCertificateController.java
+ * @brief Klasa zajmująca się obsługą panelu do wystawiania zwolnień.
+ * @details Klasa FormCertificateController.java służy do obsługi panelu od wystawiania zwolnień,
+ * w tym ustawiania pól to uzupełnienia, wysyłania zwolnienia i wylogowywania się z aplikacji.
+ */
 public class FormCertificateController {
 
     @FXML
@@ -30,6 +36,10 @@ public class FormCertificateController {
     public DatePicker fieldDateTo;
     public ComboBox fieldType;
 
+    /**
+     * @throws SQLException
+     * @details Metoda initialize() wywoływana jest do inicjalizacji kontrolera po całkowitym przetworzeniu elementu głównego dla wybranego pacjenta.
+     */
     @FXML
     public void initialize() throws SQLException {
         fieldFullName.setText(App.patient.getFullName());
@@ -42,6 +52,10 @@ public class FormCertificateController {
         fieldDateTo.setConverter(datePickrConverter("yyyy-MM-dd"));
     }
 
+    /**
+     * @throws Exception
+     * @details Metoda send() wysyła zwolnienie pacjenta a następnie wyświela okienko informujące, czy przeprowadzana operacja się udała.
+     */
     @FXML
     public void send() throws Exception {
 
@@ -67,11 +81,20 @@ public class FormCertificateController {
         }
     }
 
+    /**
+     * @throws IOException
+     * @details Metoda back() ustawia główny widok aplikacji na ten opisany w pliku doctor_panel.fxml.
+     */
     @FXML
     public void back() throws IOException {
         App.setRoot("doctor_panel");
     }
 
+    /**
+     * @param format Format daty.
+     * @return Medota zwraca datę zwolnienia.
+     * @detasils Metoda datePickrConverter() umożliwia użytkownikowi wybranie daty, która następnie jest zwracana w formie LocalDate.
+     */
     public StringConverter<LocalDate> datePickrConverter(String format) {
         return new StringConverter<LocalDate>() {
             private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(format);
