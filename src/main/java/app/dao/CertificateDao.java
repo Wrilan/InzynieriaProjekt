@@ -22,13 +22,13 @@ public class CertificateDao {
         return result;
     }
 
-    public ArrayList<Certificate> getCertificates(Integer userId) throws SQLException {
+    public ArrayList<Certificate> getCertificates(Integer patientId) throws SQLException {
         ArrayList<Certificate> certificates = new ArrayList<>();
 
-        String sql = "SELECT * FROM patients";
+        String sql = "SELECT * FROM certificates";
 
-        if(userId != null) {
-            sql += " WHERE user_id=" + userId;
+        if(patientId != null) {
+            sql += " WHERE patient_id=" + patientId;
         }
 
         ResultSet result = Database.Zus.query(sql);

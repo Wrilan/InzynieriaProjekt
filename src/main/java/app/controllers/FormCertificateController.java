@@ -1,21 +1,21 @@
 package app.controllers;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-import app.dao.CertificateDao;
-import app.entity.Certificate;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.collections.FXCollections;
+import javafx.util.StringConverter;
 import javafx.fxml.FXML;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import app.App;
-import javafx.util.StringConverter;
+import app.dao.CertificateDao;
+import app.entity.Certificate;
 
 public class FormCertificateController {
 
@@ -58,11 +58,12 @@ public class FormCertificateController {
                     fieldDateFrom.getValue().toString(), fieldDateTo.getValue().toString(),
                     type, Integer.parseInt(fieldCode.getText())))) {
                 App.showAlert("Zwolnienie zostało wysłane", Alert.AlertType.INFORMATION);
+                App.setRoot("doctor_panel");
             } else {
                 App.showAlert("Błąd wysyłania zwolnienia", Alert.AlertType.ERROR);
             }
         } catch (Exception e) {
-            App.showAlert(e.toString(), Alert.AlertType.ERROR);
+            App.showAlert("Niepoprawnie wypełnione pola", Alert.AlertType.ERROR);
         }
     }
 
@@ -70,7 +71,6 @@ public class FormCertificateController {
     public void back() throws IOException {
         App.setRoot("doctor_panel");
     }
-
 
     public StringConverter<LocalDate> datePickrConverter(String format) {
         return new StringConverter<LocalDate>() {

@@ -24,7 +24,7 @@
         <Label text="Lista pacjentów:"/>
         <ImageView fitHeight="30.0" fitWidth="700.0" preserveRatio="true">
             <image>
-                <Image url="@../images/header.jpg"/>
+                <Image url="@../images/header1.jpg"/>
             </image>
         </ImageView>
         <ListView style='-fx-font-family: "Courier New";' fx:id="listView"/>
@@ -37,7 +37,7 @@
 
     <HBox spacing="10" alignment="center_left" GridPane.columnIndex="0" GridPane.rowIndex="2">
         <Button text="Nowe zwolnienie" onAction="#createFormCertificate"/>
-        <Button text="PDF" onAction="#generate"/>
+        <Button text="Historia zwolnień" onAction="#history"/>
     </HBox>
 
     <VBox spacing="10" alignment="center_right" GridPane.columnIndex="1" GridPane.rowIndex="2">

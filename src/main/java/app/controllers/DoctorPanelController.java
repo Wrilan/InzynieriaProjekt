@@ -13,12 +13,9 @@ import javafx.scene.input.KeyCode;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import com.lowagie.text.DocumentException;
-
 import app.App;
 import app.dao.PatientDao;
 import app.entity.Patient;
-import app.utilities.Pdf;
 
 public class DoctorPanelController {
 
@@ -52,13 +49,13 @@ public class DoctorPanelController {
     @FXML
     public void createFormCertificate() throws IOException {
         listOfPatients.selectItemFromList(listView.getSelectionModel().getSelectedIndex());
-        System.out.println(App.patient.getId());
         App.setRoot("form_certificate");
     }
 
     @FXML
-    public void generate() throws IOException, DocumentException {
-        Pdf.generate("<h1>Hello World</h1>");
+    public void history() throws IOException {
+        listOfPatients.selectItemFromList(listView.getSelectionModel().getSelectedIndex());
+        App.setRoot("history_certificates");
     }
 
     @FXML
@@ -73,7 +70,15 @@ public class DoctorPanelController {
 
         private ArrayList<Patient> patients;
 
+        private int currentId;
+
         public ListOfPatients() throws SQLException {
+            if(App.patient != null) {
+                this.currentId = App.patient.getId() - 1;
+            } else {
+                this.currentId = 0;
+            }
+
             this.update();
         }
 
@@ -85,10 +90,10 @@ public class DoctorPanelController {
                     item += ' ';
                 }
                 item += patient.getPesel() + "            " + patient.getNip() + "            " + patient.getPhone();
-                data.add(item);
+                this.data.add(item);
             }
             listView.setItems(data);
-            selectItemFromList(0);
+            selectItemFromList(this.currentId);
         }
 
         public boolean search(String nr) {

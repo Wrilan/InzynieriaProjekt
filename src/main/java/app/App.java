@@ -1,10 +1,5 @@
 package app;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
-
 import app.entity.Patient;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 import app.entity.User;
 
@@ -40,11 +37,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
-        System.out.println( sdf.format(cal.getTime()));
-        System.out.println(System.currentTimeMillis());
-
         scene = new Scene(loadFXML("login"));
         stage.setScene(scene);
         stage.setTitle("LZA System");
